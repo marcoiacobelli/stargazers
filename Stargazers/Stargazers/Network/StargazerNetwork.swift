@@ -35,7 +35,8 @@ extension StargazerNetwork: TargetType {
     }
     
     var headers: [String : String]? {
-        ["Content-type": "application/json", "Authorization": "Bearer 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"]
+        ["Content-type": "application/json"]
+        //["Content-type": "application/json"], "Authorization": "Bearer YOUR_API_KEY"]
     }
     
 }
