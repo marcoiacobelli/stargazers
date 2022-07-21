@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pwa-Xm-Hx9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stargazers-->
+        <scene sceneID="Zge-hn-FoV">
+            <objects>
+                <viewController storyboardIdentifier="StargazersListViewController" title="Stargazers" id="iKp-Gh-YsC" customClass="StargazersListViewController" customModule="Stargazers" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PIg-Kl-JLO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6wx-7I-fXv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" name="agidWhite"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" name="agidWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StargazerTableCell" rowHeight="65" id="qO4-CA-eZM" customClass="StargazerTableCell" customModule="Stargazers">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qO4-CA-eZM" id="up9-eR-LnO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hkW-dh-FAr" userLabel="AvatarImage">
+                                                    <rect key="frame" x="30" y="10" width="45" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="AbV-E1-bsj"/>
+                                                        <constraint firstAttribute="height" constant="45" id="Iru-CO-MWq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRQ-dy-W6Y">
+                                                    <rect key="frame" x="87" y="21" width="287" height="21"/>
+                                                    <color key="tintColor" name="agidBlue"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="vIe-pu-PTP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="agidBlue"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="bRQ-dy-W6Y" firstAttribute="top" secondItem="up9-eR-LnO" secondAttribute="topMargin" constant="10" id="2rn-By-onK"/>
+                                                <constraint firstItem="bRQ-dy-W6Y" firstAttribute="leading" secondItem="hkW-dh-FAr" secondAttribute="trailing" constant="12" id="7mH-GV-fBf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bRQ-dy-W6Y" secondAttribute="trailing" constant="20" id="EDA-dQ-nM0"/>
+                                                <constraint firstItem="hkW-dh-FAr" firstAttribute="centerY" secondItem="up9-eR-LnO" secondAttribute="centerY" id="SEJ-kT-IiU"/>
+                                                <constraint firstItem="hkW-dh-FAr" firstAttribute="leading" secondItem="up9-eR-LnO" secondAttribute="leadingMargin" constant="10" id="iMC-wN-Cz0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="hkW-dh-FAr" id="6gk-YA-gwe"/>
+                                            <outlet property="stargazerLoginLabel" destination="bRQ-dy-W6Y" id="geX-48-dXL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iKp-Gh-YsC" id="Ljq-nW-eYz"/>
+                                    <outlet property="delegate" destination="iKp-Gh-YsC" id="HV8-1P-LcF"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing to show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NP9-Um-NFU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="agidBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jIW-cZ-ZiT"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6wx-7I-fXv" secondAttribute="bottom" id="BOf-FO-O3D"/>
+                            <constraint firstItem="jIW-cZ-ZiT" firstAttribute="trailing" secondItem="NP9-Um-NFU" secondAttribute="trailing" id="Jpp-xt-DBa"/>
+                            <constraint firstItem="6wx-7I-fXv" firstAttribute="leading" secondItem="jIW-cZ-ZiT" secondAttribute="leading" id="OsU-7P-R76"/>
+                            <constraint firstItem="6wx-7I-fXv" firstAttribute="top" secondItem="jIW-cZ-ZiT" secondAttribute="top" id="PCz-UE-Wtc"/>
+                            <constraint firstItem="NP9-Um-NFU" firstAttribute="top" secondItem="jIW-cZ-ZiT" secondAttribute="top" id="RXZ-0C-NrX"/>
+                            <constraint firstItem="NP9-Um-NFU" firstAttribute="leading" secondItem="jIW-cZ-ZiT" secondAttribute="leading" id="Rff-u3-KHr"/>
+                            <constraint firstItem="jIW-cZ-ZiT" firstAttribute="trailing" secondItem="6wx-7I-fXv" secondAttribute="trailing" id="syC-fG-X9W"/>
+                            <constraint firstItem="jIW-cZ-ZiT" firstAttribute="bottom" secondItem="NP9-Um-NFU" secondAttribute="bottom" id="zXi-ha-wcg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vFe-1s-bbF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pZv-ZK-SAj">
+                            <color key="tintColor" name="agidBlue"/>
+                            <connections>
+                                <action selector="btnAddAction:" destination="iKp-Gh-YsC" id="yUn-gD-4Ge"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="statusLabel" destination="NP9-Um-NFU" id="sWN-0s-MXb"/>
+                        <outlet property="tableView" destination="6wx-7I-fXv" id="RLU-uF-EBZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgn-gT-U5k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3147.826086956522" y="22.767857142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="glN-62-ZsA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pwa-Xm-Hx9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fwi-bQ-MgB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ynh-7O-HmU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="agidWhite"/>
+                        <navigationBarAppearance key="standardAppearance"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iKp-Gh-YsC" kind="relationship" relationship="rootViewController" id="TjV-1y-TcN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o14-Ga-kRD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2079.7101449275365" y="22.767857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="agidBlue">
+            <color red="0.0" green="0.34901960784313724" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="agidWhite">
+            <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_StargazersTests {
+  umbrella header "Pods-StargazersTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
