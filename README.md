@@ -26,7 +26,7 @@ Get started
 
 <br>
 
-Get started
+Requirements
 ===========
 * iOS 15.0
 
