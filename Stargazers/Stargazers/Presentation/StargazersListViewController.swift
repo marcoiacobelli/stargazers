@@ -150,10 +150,3 @@ extension StargazersListViewController: UITableViewDelegate {
     }
     
 }
-
-//MARK:- Orientation
-extension StargazersListViewController {
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
-}
